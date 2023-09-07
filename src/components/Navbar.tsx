@@ -28,7 +28,7 @@ const navbarLinkStyles = {
 }
 
 const mobileMeniItems = {
-    textColor: '#fff',
+    textColor: '#1A1A1A',
     bg: 'transparent',
     marginTop: '5px',
     padding:'2px ',
@@ -58,18 +58,18 @@ const Navbar = () => {
                                 bg='transparent'
                                 cursor={'pointer'}
                             />
-                            <MenuList boxShadow='3xl' shadow={'2xl'} p='6' bgColor='#333' borderRadius={'2xl'}>
+                            <MenuList boxShadow='3xl' shadow={'2xl'} p='4' bgColor='#fff' borderRadius={'2xl'}>
                                 <MenuItem as='a' href='#' sx={mobileMeniItems}>
-                                    New Tab
+                                    Blog
                                 </MenuItem>
                                 <MenuItem as='a' href='#' sx={mobileMeniItems}>
-                                    New Window
+                                    Projects
                                 </MenuItem>
                                 <MenuItem as='a' href='#' sx={mobileMeniItems}>
-                                    Open Closed Tab
+                                    About
                                 </MenuItem>
                                 <MenuItem as='a' href='#' sx={mobileMeniItems}>
-                                    Open File...
+                                    Newsletter
                                 </MenuItem>
                             </MenuList>
                             
