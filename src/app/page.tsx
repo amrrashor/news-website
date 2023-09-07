@@ -1,12 +1,12 @@
 'use client'
 import Hero from "@/components/Hero";
-import { ChakraProvider } from "@chakra-ui/react";
+import RecentBlogPost from "@/components/RecentBlogPost";
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <div>recent blog posts</div>
+      <RecentBlogPost />
       <div>all blog posts</div>
     </main>
   )
