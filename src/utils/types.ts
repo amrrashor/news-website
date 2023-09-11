@@ -1,4 +1,4 @@
-export interface rescentBlogPostProps {
+export interface SingleBlogPostProps {
     id: number,
     userId: number,
     title: string,

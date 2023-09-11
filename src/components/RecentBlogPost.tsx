@@ -3,14 +3,14 @@ import { Box, Flex, Grid, GridItem, Text, Image, Spinner } from "@chakra-ui/reac
 import { useQuery } from 'react-query';
 
 //PROP TYPES
-import { rescentBlogPostProps } from "@/utils/types";
+import { SingleBlogPostProps } from "@/utils/types";
 //STYLES
 import { RecentBlogsStyles } from "@/utils/styles";
 
 import  SectionHeader  from "./SectionHeader";
 
 
-const SinglePost = ({id, userId, title, body}: rescentBlogPostProps) => {
+const SinglePost = ({id, userId, title, body}: SingleBlogPostProps) => {
 return (
     <GridItem
         colSpan={id === 4 ? [1, 2, 2] : 1}
@@ -73,7 +73,7 @@ const RecentBlogPost = () => {
                             templateRows={['repeat(4, 480px)', 'repeat(6, 1fr)', 'repeat(3, 267px)']}
                             templateColumns={['repeat(1, auto)', 'repeat(2, 640px)', 'repeat(2, 640px)']}
                         >
-                        {data.slice(0,4).map((post: rescentBlogPostProps) => (
+                        {data.slice(0,4).map((post: SingleBlogPostProps) => (
                             <SinglePost {...post}/>
                         ))}
                     </Grid>
