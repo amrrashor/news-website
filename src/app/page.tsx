@@ -1,13 +1,11 @@
-'use client'
-import Hero from "@/components/Hero";
-import RecentBlogPost from "@/components/RecentBlogPost";
+import { AllBlogs, Hero, RecentBlogPost } from "@/components";
 
 export default function Home() {
   return (
     <main>
       <Hero />
       <RecentBlogPost />
-      <div>all blog posts</div>
+      <AllBlogs />
     </main>
   )
 }

@@ -1,10 +1,13 @@
-import { Box, Flex, Grid, GridItem, Text, Image, Spinner  } from "@chakra-ui/react";
+'use client'
+import { Box, Flex, Grid, GridItem, Text, Image, Spinner } from "@chakra-ui/react";
 import { useQuery } from 'react-query';
 
 //PROP TYPES
 import { rescentBlogPostProps } from "@/utils/types";
 //STYLES
 import { RecentBlogsStyles } from "@/utils/styles";
+
+import  SectionHeader  from "./SectionHeader";
 
 
 const SinglePost = ({id, userId, title, body}: rescentBlogPostProps) => {
@@ -55,29 +58,31 @@ const RecentBlogPost = () => {
     )
 
     return (
-        <Box marginLeft={'auto'} marginRight={'auto'} maxW={'1280px'} marginTop={'150px'}>
-            <Text as={'h3'} sx={RecentBlogsStyles.Section_Header}>
-                Recent blog posts
-            </Text>
+        <>
+            <Box marginLeft={'auto'} marginRight={'auto'} marginTop={'150px'}>
+                <SectionHeader text='Recent blog posts' />
 
-            <Flex justifyContent={'center'} flexDirection={'column'} alignItems={'center'}>
-                {isLoading ? (
-                    <Spinner />
-                ): (
-                    <Grid
-                        maxW={'1280px'}
-                        columnGap={[1, 1, 3]}
-                        rowGap={[1, 1, 3]}
-                        templateRows={['repeat(4, 480px)', 'repeat(6, 1fr)', 'repeat(3, 267px)']}
-                        templateColumns={['repeat(1, auto)', 'repeat(2, 640px)', 'repeat(2, 640px)']}
-                    >
-                    {data.slice(0,4).map((post: rescentBlogPostProps) => (
-                        <SinglePost {...post}/>
-                    ))}
-                </Grid>
-                )}
-            </Flex>
-        </Box>
+                <Flex justifyContent={'center'} flexDirection={'column'} alignItems={'center'}>
+                    {isLoading ? (
+                        <Spinner />
+                    ) : (
+                        <Grid
+                            maxW={'1280px'}
+                            columnGap={[1, 1, 3]}
+                            rowGap={[1, 1, 3]}
+                            templateRows={['repeat(4, 480px)', 'repeat(6, 1fr)', 'repeat(3, 267px)']}
+                            templateColumns={['repeat(1, auto)', 'repeat(2, 640px)', 'repeat(2, 640px)']}
+                        >
+                        {data.slice(0,4).map((post: rescentBlogPostProps) => (
+                            <SinglePost {...post}/>
+                        ))}
+                    </Grid>
+                    )}
+                </Flex>
+            </Box>
+
+            <Box bg='gray.300' w={'100%'} height={'1px'} marginTop={'100px'}/>
+        </>
     )
 }
 

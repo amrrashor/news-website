@@ -1,13 +1,5 @@
 //RECENT BLOG POSTS STYLES
 export const RecentBlogsStyles = {
-    Section_Header: {
-        fontSize: '24px',
-        lineHeight: "32px",
-        fontWeight: "600",
-        color: "#1A1A1A",
-        marginBottom: '40px',
-        textAling:'left',
-    },
     Date_Author: {
         textColor: '#6941C6',
         fontSize: '14px',
@@ -49,3 +41,19 @@ export const RecentBlogsStyles = {
 }
 
 
+//ALL BLOG POSTS STYLES
+export const AllBlogPostsStyles = {
+
+}
+
+
+
+//SECTION HEADER
+export const Header = {
+    fontSize: '24px',
+    lineHeight: "32px",
+    fontWeight: "600",
+    color: "#1A1A1A",
+    marginBottom: '40px',
+    textAling:'left',
+}

@@ -22,7 +22,7 @@ const navbarLinkStyles = {
     lineHeight:'16px',
     fontWeight:'semibold',
     textColor: '#1A1A1A',
-    marginLeft: '10px',
+    // marginLeft: '10px',
     marginRight: '10px',
     cursor:'pointer'
 }

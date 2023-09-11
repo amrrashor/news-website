@@ -4,3 +4,7 @@ export interface rescentBlogPostProps {
     title: string,
     body: string,
 }
+
+export interface SectionHeaderProp {
+    text:string
+}
