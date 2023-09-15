@@ -74,7 +74,7 @@ const RecentBlogPost = () => {
                             templateColumns={['repeat(1, auto)', 'repeat(2, 640px)', 'repeat(2, 640px)']}
                         >
                         {data.slice(0,4).map((post: SingleBlogPostProps) => (
-                            <SinglePost {...post}/>
+                            <SinglePost key={post.id} {...post}/>
                         ))}
                     </Grid>
                     )}
