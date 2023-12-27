@@ -10,7 +10,7 @@ import { SingleBlogPostProps } from "@/utils/types";
 
 const SingleBlogPost = ({id, title, body, userId }:SingleBlogPostProps) => {
     return (
-        <Link href={`/blogs/${id}`}>
+        <Link href={`/posts/${id}`} style={{cursor:'pointer'}}>
             <Box w='384px'>
                 <Image src='/img/placeholder.png' alt={title} width={'100%'} height={'240px'} />
 
@@ -41,10 +41,8 @@ const AllBlogs = () => {
         )
     ))
 
-
-
     return (
-        <Box marginTop={'150px'}  marginLeft={'auto'} marginRight={'auto'} w='100%'>
+        <Box marginTop={'150px'} backgroundColor={'black'}  marginLeft={'auto'} marginRight={'auto'} w='100%'>
             <SectionHeader text='All blog posts' />
             
             <Flex flexWrap={'wrap'} justifyContent={'space-between'}>
@@ -54,7 +52,7 @@ const AllBlogs = () => {
                     <>
                         {data.length > 0 &&
                             data.map((post: SingleBlogPostProps) => (
-                            <SingleBlogPost key={post.id} {...post} />
+                            <SingleBlogPost key={post?.id} {...post} />
                         ))}
                     </>
                 )}
