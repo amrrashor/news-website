@@ -1,15 +1,17 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import RecentBlogPost from './RecentBlogPost';
+import RecentBlogs from './RecentBlogs';
 import Hero from "./Hero";
-import AllBlogs from "./AllBlogs";
+import BlogList from "./BlogList";
 import SectionHeader from "./SectionHeader";
+import Card from "./shared/card";
 
 export {
     Navbar,
     Footer,
-    RecentBlogPost,
+    RecentBlogs,
     Hero,
-    AllBlogs,
-    
+    BlogList,
+    SectionHeader,
+    Card
 }
