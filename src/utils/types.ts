@@ -1,8 +1,12 @@
-export interface SingleBlogPostProps {
-    id: number,
-    userId: number,
+export interface cardProps {
+    id: string,
+    author: string,
     title: string,
-    body: string,
+    description: string,
+    url: string,
+    urlToImage:string
+    publishedAt: string,
+    content:string,
 }
 
 export interface SectionHeaderProp {

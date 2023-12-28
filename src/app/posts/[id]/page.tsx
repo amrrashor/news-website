@@ -14,11 +14,11 @@ const SinglePost = ({ params: {id} }: {params: {id: string | number}}) => {
     if (isLoading) return <p>Loading...</p>
     if (error) return <p>Error :</p>
     return (
-        <Link href={`posts/${id}`}>
+        <>
             <div>
                 {data?.title}
             </div>
-        </Link>
+        </>
     );
 };
 

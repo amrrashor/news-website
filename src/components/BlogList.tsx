@@ -5,46 +5,53 @@ import { useQuery } from 'react-query';
 
 
 import SectionHeader from "./SectionHeader";
-import { SingleBlogPostProps } from "@/utils/types";
+import { cardProps } from "@/utils/types";
 import { fetchAllBlogs } from '@/utils/actions/actions';
 import { Card } from '.';
 
 
 const AllBlogs = () => {
+    
+
     const { isLoading, data, error, isSuccess, isError } = useQuery('allblogs', fetchAllBlogs);
     const [blogs, setBlogs] = useState([]);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        setBlogs([]);
-    }, [])
-
+        return () => {
+            setBlogs([]);
+        }
+    }, []);
 
     useEffect(() => {
         if (isLoading) {
             setLoading(true);
-        } else if (isSuccess && data && data?.length > 0) {
-            setBlogs(data);
+        } else if (isSuccess) {
+            setBlogs(data?.articles);
             setLoading(false);
         } else if (isError) {
-            throw error
+            console.log('error', error);
+            setLoading(false);
         }
-    }, [data, isSuccess, isLoading]);
+    }, [data, isSuccess, isLoading, isError]);
 
     return (
         <Box marginTop={'150px'} marginLeft={'auto'} marginRight={'auto'} w='100%'>
             <SectionHeader text='All blog posts' />
             
-            <Flex flexWrap={'wrap'} justifyContent={'space-between'}>
+            <Flex flexWrap={'wrap'} justifyContent={'space-between'} gap={'5'}>
                 {loading ? (
-                    <Spinner />
-                ) : (
-                    <>
-                        {blogs && blogs?.length > 0 &&
-                            blogs.map((post: SingleBlogPostProps) => (
-                            <Card key={post?.id} {...post} />
-                        ))}
-                    </>
+                        <Flex justifyContent={'center'} alignItems={'center'} width={'full'} height={'full'}>
+                        <Spinner size={'xl'} />
+                        </Flex>
+                    ) : isSuccess && blogs?.length > 0 ? (
+                        <>
+                            {blogs?.map((post: cardProps) => (
+                                <Card key={post?.id} {...post} />
+                            ))}
+                        </>
+                    ) : (
+                        <></>
                 )}
             </Flex>
         </Box>
