@@ -1,5 +1,4 @@
 export interface cardProps {
-    id: string,
     author: string,
     title: string,
     description: string,

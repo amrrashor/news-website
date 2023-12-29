@@ -3,7 +3,7 @@ import { Box, Flex, Grid, GridItem, Text, Image, Spinner } from "@chakra-ui/reac
 import { useQuery } from 'react-query';
 
 //PROP TYPES
-import { SingleBlogPostProps } from "@/utils/types";
+import { SingleBlogPostProps } from "@/utils/types/types";
 //STYLES
 import { RecentBlogsStyles } from "@/utils/styles";
 

@@ -1,7 +1,7 @@
 'use clinet';
 
 import { Text } from "@chakra-ui/react";
-import { SectionHeaderProp } from "@/utils/types";
+import { SectionHeaderProp } from "@/utils/types/types";
 import { Header } from "@/utils/styles";
 
 
